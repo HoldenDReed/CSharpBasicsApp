@@ -1,4 +1,6 @@
-﻿namespace CSharpBasicsConsole
+﻿using CSharpBasicsConsole.Classes;
+
+namespace CSharpBasicsConsole
 {
     internal class Program
     {
@@ -9,43 +11,50 @@
              * Favorite day of the week: Wednesday
              * Least favorite school subject: English
              * 
-             */
+             * 
+             
 
+            object userInput = new
+            {
+                Name = "Test",
+                FavoriteDay = "Testday",
+                LeastFavoriteSubject = "TestSubject"
+            };
+            */
+            UserInput userInput = new UserInput();
+         
             Console.Write("Enter your name: ");
-            string name = Console.ReadLine();
+            userInput.Name = Console.ReadLine();
             
-            while (String.IsNullOrWhiteSpace(name))
+            while (String.IsNullOrWhiteSpace(userInput.Name))
             {
                 Console.WriteLine("Please enter a name: ");
-                name = Console.ReadLine();
+                userInput.Name = Console.ReadLine();
             }
 
             Console.Write("Enter your day of the week: ");
-            string day = Console.ReadLine();
+            userInput.FavoriteDay = Console.ReadLine();
            
-            while (String.IsNullOrWhiteSpace(day))
+            while (String.IsNullOrWhiteSpace(userInput.FavoriteDay))
             {
                 Console.WriteLine("Please enter a valid day of the week: ");
-                day = Console.ReadLine();
+                userInput.FavoriteDay = Console.ReadLine();
             }
 
             Console.Write("Enter your least favorite school subject: ");
-            string subject = Console.ReadLine();
+            userInput.LeastFavoriteSubject = Console.ReadLine();
 
-            while (String.IsNullOrWhiteSpace(subject))
+            while (String.IsNullOrWhiteSpace(userInput.LeastFavoriteSubject))
             {
                 Console.WriteLine("Please enter a valid school subject: ");
-                subject = Console.ReadLine();
+                userInput.LeastFavoriteSubject = Console.ReadLine();
             }
             Console.Clear();
 
             // @ - string verbatim yo
-            string displayText = @$"
-Name: {name}
-Favorite day of the week: {day}
-Least favorite school subject: {subject}";
+           
 
-            Console.Write(displayText);
+            Console.Write(userInput);
 
             Console.ReadLine();
 
@@ -61,5 +70,6 @@ Least favorite school subject: {subject}";
 
             //Console.WriteLine($"Hello, {input}!");
         }
+
     }
 }
