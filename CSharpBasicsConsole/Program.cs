@@ -39,7 +39,7 @@
             }
             Console.Clear();
 
-            // @ - string verbatim
+            // @ - string verbatim yo
             string displayText = @$"
 Name: {name}
 Favorite day of the week: {day}
